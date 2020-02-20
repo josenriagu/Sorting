@@ -28,15 +28,13 @@ def merge_sort(arr):
     if len(arr) < 2:
         return arr
     # TO-DO
-    while len(arr) >= 2:
-        # find the midpoint of the list
-        midpoint = len(arr) // 2
-        # split the list into two halves from the midpoint and recursively call merge_sort
-        LHS = merge_sort(arr[: midpoint])
-        RHS = merge_sort(arr[midpoint:])
-        # call the helper function on the halves
-        return merge(LHS, RHS)
-    return arr
+    # find the midpoint of the list
+    midpoint = len(arr) // 2
+    # split the list into two halves from the midpoint and recursively call merge_sort
+    LHS = merge_sort(arr[: midpoint])
+    RHS = merge_sort(arr[midpoint:])
+    # call the helper function on the halves
+    return merge(LHS, RHS)
 
 
 # STRETCH: implement an in-place merge sort algorithm
